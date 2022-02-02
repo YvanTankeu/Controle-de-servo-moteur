@@ -44,7 +44,7 @@ void loop() {
     servo.write(angle); // positionne le servo sur l'angle passé en paramètre
     delay(delai);
 
-    sautAngle = servo.read();
+    sautAngle = servo.read();  // retourne la valeur en dégré
     if (angle > angleMin && angle  <= angleMax ){
       Serial.print("Se déplacer vers: ");
       Serial.print(angle); // print the angle
@@ -72,7 +72,7 @@ void loop() {
     servo.write(angle);
     delay(delai);
 
-    sautAngle = servo.read();
+    sautAngle = servo.read(); // retourne la valeur en dégré
     if (angle > angleMin && angle <= angleMax)
     {
       Serial.print("Se déplacer vers: ");
