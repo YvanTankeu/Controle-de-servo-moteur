@@ -40,14 +40,13 @@ void loop() {
   StatuBtn = digitalRead(ButtonPin);  // Signal lu par le boutton stocké dans StatuBtn
   if (StatuBtn == HIGH) // Si on presse le bouton, le servo ira de la gaucher vers la droite de 1 à 180
   {
-    angle = angle + 1; // suivant un pas de 1
+    angle = angle + 1;  // augmente la valeur de la variable "angle" chaque fois que l'on appuie sur le bouton-poussoir de gauche.
     servo.write(angle); // positionne le servo sur l'angle passé en paramètre
-    delay(delai);
-
-    sautAngle = servo.read();  // retourne la valeur en dégré
+    delay(delai);       // 20 millisecondes de retard
+    
     if (angle > angleMin && angle  <= angleMax ){
       Serial.print("Se déplacer vers: ");
-      Serial.print(angle); // print the angle
+      Serial.print(angle); 
       Serial.println(" degrée");
     }
     else
@@ -72,11 +71,10 @@ void loop() {
     servo.write(angle);
     delay(delai);
 
-    sautAngle = servo.read(); // retourne la valeur en dégré
     if (angle > angleMin && angle <= angleMax)
     {
       Serial.print("Se déplacer vers: ");
-      Serial.print(angle); // print the angle
+      Serial.print(angle);
       Serial.println(" degrée");
     }
     else
